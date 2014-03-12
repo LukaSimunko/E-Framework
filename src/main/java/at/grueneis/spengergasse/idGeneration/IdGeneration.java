@@ -2,10 +2,12 @@ package at.grueneis.spengergasse.idGeneration;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
+import at.grueneis.spengergasse.lesson_plan.domain.Teacher;
+
 public class IdGeneration {
 	
-	private static  AtomicInteger uniqueId=new AtomicInteger();
-    private static  int id;
+	private  AtomicInteger uniqueId=new AtomicInteger();
+    private  int id;
 	
     
     public int getid(int id){
@@ -13,7 +15,7 @@ public class IdGeneration {
     	return  id;
     }
     
-	public static int generateUniqueId() {      
+	public int generateUniqueId() {      
 		
 		return id = 1+uniqueId.getAndIncrement();
 	       
@@ -21,8 +23,9 @@ public class IdGeneration {
 	
 	public static void main(String[] args){
 		
+		IdGeneration idg = new IdGeneration();
 		for(int i=0; i<=10;i++){
-	    	   System.out.println(generateUniqueId());
+	    	   System.out.println(idg.generateUniqueId()+" Hello Worldddddddddd");
 	       }
 	}
 

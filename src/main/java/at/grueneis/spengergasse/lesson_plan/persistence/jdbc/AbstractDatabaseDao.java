@@ -71,6 +71,7 @@ public abstract class AbstractDatabaseDao<T extends BasePersistable> implements 
             throw new LessonPlanDataAccessException("Failed to create find all statement", e);
         }
     }
+    
 
     private PreparedStatement findByIdStatement() {
         try {
