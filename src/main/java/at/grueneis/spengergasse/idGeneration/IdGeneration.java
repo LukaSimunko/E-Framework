@@ -1,16 +1,20 @@
 package at.grueneis.spengergasse.idGeneration;
 
+import java.util.ArrayList;
+import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
+import at.grueneis.spengergasse.lesson_plan.persistence.jdbc.*; 
 
 import at.grueneis.spengergasse.lesson_plan.domain.Teacher;
 
-public class IdGeneration {
+public class IdGeneration{
 	
 	private  AtomicInteger uniqueId=new AtomicInteger();
-    private  int id;
-	
+    private static  int id;
     
-    public int getid(int id){
+
+
+	public static int getid(){
     	
     	return  id;
     }
@@ -19,14 +23,11 @@ public class IdGeneration {
 		
 		return id = 1+uniqueId.getAndIncrement();
 	       
-	   }
-	
-	public static void main(String[] args){
-		
-		IdGeneration idg = new IdGeneration();
-		for(int i=0; i<=10;i++){
-	    	   System.out.println(idg.generateUniqueId()+" Hello Worldddddddddd");
-	       }
 	}
-
+	
+	
+	
+	
 }
+
+
